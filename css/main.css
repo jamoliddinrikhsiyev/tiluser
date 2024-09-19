@@ -1,0 +1,232 @@
+* {
+  color: var(--text_color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background: no-repeat center center fixed;
+  background-size: cover;
+  background-color: var(--main_theme);
+  box-sizing: border-box;
+  background-image: url("../img/pexels-christian-heitz-285904-842711.jpg");
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 150px;
+  filter: blur(5px);
+  border: solid 1px var(--border_color);
+  align-items: center;
+  justify-content: center;
+  animation: logoanimation 1s linear, resize 1s linear 1s;
+  animation-fill-mode: forwards;
+  position: fixed;
+  z-index: 5;
+  background-color: var(--main_theme);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 95vw;
+  height: inherit;
+  border: solid 1px var(--border_color);
+  background-color: var(--main_theme);
+}
+
+header > .container {
+  height: 100%;
+  position: relative;
+}
+
+header > .container > .socials {
+  position: absolute;
+  z-index: 10;
+}
+
+.tiluserlogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: calc((100% - 500px) / 2);
+  z-index: 20;
+  border: solid 1px var(--border_color);
+}
+
+.tiluserlogo,
+.tiluserlogo img {
+  width: 500px;
+  height: 500px;
+  animation: resize-logo 1s linear 1s;
+  animation-fill-mode: forwards;
+}
+
+.tiluserlogo p {
+  display: inline-block;
+  color: transparent;
+  width: 150px;
+  text-align: center;
+  margin-top: 7px;
+  animation: pa 1s linear 2s;
+  animation-fill-mode: forwards;
+}
+
+.socials {
+  display: flex;
+  width: 400px;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 1px var(--border_color);
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+.socials div {
+  margin: 15px 0;
+}
+
+.header_box {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 15;
+  background-color: var(--main_theme);
+  animation: visible 1s linear 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.day_night_switch {
+  margin-left: auto;
+  margin-right: 150px;
+  right: 15px;
+}
+
+main {
+  display: flex;
+  margin-top: 200px;
+}
+
+main > .container {
+  flex-direction: column;
+}
+
+@-webkit-keyframes pa {
+  from {
+    color: transparent;
+  }
+  to {
+    color: var(--text_color);
+  }
+}
+
+@-webkit-keyframes logoanimation {
+  from {
+    filter: blur(5px);
+    height: 100%;
+  }
+  to {
+    filter: blur(0px);
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes resize {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 200px;
+  }
+}
+
+@-webkit-keyframes resize-logo {
+  from {
+  }
+  to {
+    width: 100px;
+    height: 100px;
+    left: calc((100% - 100px) / 2);
+  }
+}
+
+@-webkit-keyframes visible {
+  from {
+    background-color: var(--main_theme);
+  }
+  to {
+    background-color: transparent;
+    display: none;
+  }
+}
+
+.untouchable {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  header > .container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .socials {
+    max-width: 100%;
+    top: 10px;
+  }
+
+  .tiluserlogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: calc((100% - 200px) / 2);
+    left: calc((100% - 200px) / 2);
+  }
+
+  .tiluserlogo,
+  .tiluserlogo img {
+    width: 200px;
+    height: 200px;
+    animation: resize-logo 1s linear 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .day_night_switch {
+    width: 100px;
+    height: 50px;
+  }
+
+  @-webkit-keyframes resize-logo {
+    from {
+    }
+    to {
+      width: 100px;
+      height: 100px;
+      left: calc((100% - 100px) / 2);
+      bottom: 15px;
+    }
+  }
+
+  /* * {
+    border: none;
+    border-style: none;
+  } */
+}
