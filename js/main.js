@@ -56,6 +56,10 @@ function change_theme(theme) {
     property.style.setProperty("--main_theme", "white");
     property.style.setProperty("--text_color", "black");
     property.style.setProperty("--border_color", "black");
+    property.style.setProperty(
+      "--wallpaper",
+      `url("../img/wallpaper_light.jpg")`
+    );
 
     logo.src = "./icons/logo(1).svg";
     youtube_icon.setAttribute("fill", "black");
@@ -63,21 +67,21 @@ function change_theme(theme) {
     telegram_icon.setAttribute("fill", "black");
     tiktok_icon.setAttribute("fill", "black");
 
-    body.style.background = `url("../img/pexels-christian-heitz-285904-842711.jpg")`;
-
     night.checked = false;
   } else if (theme == "dark") {
     property.style.setProperty("--main_theme", "black");
     property.style.setProperty("--text_color", "white");
     property.style.setProperty("--border_color", "white");
+    property.style.setProperty(
+      "--wallpaper",
+      `url("../img/wallpaper_dark.jpg")`
+    );
 
     logo.src = "./icons/white_logo_on_dark.svg";
     youtube_icon.setAttribute("fill", "white");
     instagram_icon.setAttribute("fill", "white");
     tiktok_icon.setAttribute("fill", "white");
     telegram_icon.setAttribute("fill", "white");
-
-    body.style.background = `url("../img/dark_forest_wallpaper.jpg")`;
 
     night.checked = true;
   }

@@ -13,7 +13,7 @@ body {
   background-size: cover;
   background-color: var(--main_theme);
   box-sizing: border-box;
-  background-image: url("../img/pexels-christian-heitz-285904-842711.jpg");
+  background-image: var(--wallpaper);
 }
 
 header {
@@ -228,7 +228,7 @@ main > .container {
     }
   }
   iframe {
-    max-width: 400px;
+    max-width: 100%;
   }
 
   /* * {
